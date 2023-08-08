@@ -26,7 +26,7 @@ public class Main {
         int[] destPixels = ((DataBufferInt) out.getRaster().getDataBuffer()).getData();
         int[] sourcePixels = ((DataBufferInt) picture.getRaster().getDataBuffer()).getData();
 
-        final int  = 20;
+        final int BLUR_SIZE = 20;
 
         ExecutorService executor = Executors.newFixedThreadPool(4);
         ArrayList<Runnable> tasks = new ArrayList<>();

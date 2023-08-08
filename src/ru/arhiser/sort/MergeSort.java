@@ -9,14 +9,14 @@ public class MergeSort {
         System.out.println(arrayToString(array));
     }
 
-    public static int[] mergeSort(int[] array) {
+    public static int[] mergeSort(int[] nums) {
         int[] tmp;
-        int[] currentSrc = array;
-        int[] currentDest = new int[array.length];
+        int[] currentSrc = nums;
+        int[] currentDest = new int[nums.length];
 
         int size = 1;
-        while (size < array.length) {
-            for (int i = 0; i < array.length; i += 2 * size) {
+        while (size < nums.length) {
+            for (int i = 0; i < nums.length; i += 2 * size) {
                 merge(currentSrc, i, currentSrc, i + size, currentDest, i, size);
             }
 
@@ -26,7 +26,7 @@ public class MergeSort {
 
             size = size * 2;
 
-            System.out.println(arrayToString(currentSrc));
+//            System.out.println(arrayToString(currentSrc));
         }
         return currentSrc;
     }
@@ -57,8 +57,8 @@ public class MergeSort {
                 index2++;
             }
         }
-    }
 
+    }
     private static String arrayToString(int[] array) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
